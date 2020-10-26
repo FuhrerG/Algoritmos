@@ -31,7 +31,8 @@ void ord_shell( int v[], int n ) {
    do {
       incremento = incremento/2;
       for(i = incremento; i < n ; i++) {
-         tmp = v[i]; j = i;
+         tmp = v[i];
+         j = i;
          seguir = true;
          while (((j-incremento) > -1) && seguir) {
             if(tmp < v[j-incremento]) {
