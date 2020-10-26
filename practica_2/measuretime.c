@@ -49,7 +49,7 @@ void mostrar_tiempo(int n, double t, bool es_promedio, float subestimada,
   float ajustada, float sobreestimada) {
   if (es_promedio) printf("(*)");
   else printf("   ");
-  printf("%12d %15.3f %17.6f %17.6f %17.6f\n", n, t, t/subestimada,
+  printf("%12d %15.7f %17.10f %17.10f %17.10f\n", n, t, t/subestimada,
       t/ajustada, t/sobreestimada);
 }
 
@@ -88,12 +88,11 @@ void medir_tiempos(void (*ordenar)(int v[],int n), void (*inicializar)
   (int v[],int n), int selector[],float power[], int n1, int razon){
 
   double t_inicio, t_fin, t_total;
-  int i, n, v[32000];
+  int i, v[32000], n = n1;
   bool conProm;
 
   for (i = 0; i<7; i++) {
-    // Obtenemos el termino de la progresion geometrica
-    n = n1 * pow(razon, i);
+
     //inicializamos el vector
     inicializar(v, n);
     // Obtenemos los tiempos de ejecución
@@ -113,6 +112,8 @@ void medir_tiempos(void (*ordenar)(int v[],int n), void (*inicializar)
       divisor(selector[1], n, power[1]), divisor(selector[2], n, power[2]));
   }
   printf("\n*: Tiempo promedio de 1000 ejecuciones del algoritmo\n\n\n");
+  // Obtenemos el termino de la progresion geometrica
+  n *= 2;
 }
 
 // Muestra la cabecera de las tablas
