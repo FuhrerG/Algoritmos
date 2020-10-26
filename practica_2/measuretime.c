@@ -8,7 +8,9 @@
 #include "algoritmos.h"
 #include "measuretime.h"
 
-//calcula el tiempo desde ... hasta ahora
+/**FUNCIONES PARA LA MEDICION DE TIEMPOS Y COTAS DE ALGORITMOS**/
+
+// Calcula el tiempo desde ... hasta ahora
 double microsegundos(){
   struct timeval t;
   if (gettimeofday(&t, NULL) < 0 )
@@ -51,6 +53,7 @@ void mostrar_tiempo(int n, double t, bool es_promedio, float subestimada,
       t/ajustada, t/sobreestimada);
 }
 
+// Función que mide el tiempo promedio de 1000 repeticiones
 double t_promedio(void (*ordenar)(int v[],int n),
   void (*inicializar)(int v[],int n), int v[], int n){
 
@@ -106,7 +109,6 @@ void medir_tiempos(void (*ordenar)(int v[],int n), void (*inicializar)
       conProm = true;
     }
 
-    // Se muestran los tiempos
     mostrar_tiempo(n, t_total, conProm, divisor(selector[0], n, power[0]),
       divisor(selector[1], n, power[1]), divisor(selector[2], n, power[2]));
   }

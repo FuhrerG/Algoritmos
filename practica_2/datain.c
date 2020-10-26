@@ -6,7 +6,10 @@
 #include "measuretime.h"
 #include "utils.h"
 
-// FUNCIONES
+/***FUNCIONES DE ENTRADA DE DATOS PARA LAS TABLAS DE TIEMPOS***/
+
+// Pasa los datos y llama a las funciones para el calculo de los tiempos de
+// ordenacion de vectores ordenados de manera ascendente
 void tiempos_asc(){
   int selector[3];
   float power[3];
@@ -40,6 +43,8 @@ void tiempos_asc(){
   medir_tiempos(&ord_shell, &ascendente, selector, power, 500, 2);
 }
 
+// Pasa los datos y llama a las funciones para el calculo de los tiempos de
+// ordenacion de vectores ordenados de manera descendente
 void tiempos_des(){
   int selector[3];
   float power[3];
@@ -73,6 +78,8 @@ void tiempos_des(){
   medir_tiempos(&ord_shell, &descendente, selector, power, 500, 2);
 }
 
+// Pasa los datos y llama a las funciones para el calculo de los tiempos de
+// ordenacion de vectores ordenados de manera aleatoria
 void tiempos_ale(){
   int selector[3];
   float power[3];

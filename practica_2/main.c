@@ -20,12 +20,17 @@ int main() {
   int repeticiones;
   int stdout_copy = dup(1);
 
+  // Inicializamos la semilla de numeros aleatorios
   inicializar_semilla();
 
+  // Testeamos los algoritmos
   if (!testear())
     return 0;
 
   close(1);
+
+  // Calculamos cotas y tiempos de la ejecucion de los algoritmos, imprimiendo
+  // por pantalla solo la ultima tabla de valores
   for ( repeticiones = 0; repeticiones < 5; repeticiones++ ){
     if (repeticiones == 4){
       dup2(stdout_copy, 1);
@@ -33,5 +38,6 @@ int main() {
     }
     tiempos();
   }
+
   return 0;
 }

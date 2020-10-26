@@ -5,7 +5,9 @@
 #include "utils.h"
 #include "measuretime.h"
 
-//ordenacion por insercion
+/*****ALGORITMOS DE ORDENACION*****/
+
+// Algoritmo de ordenacion por insercion
 void ord_ins (int v[], int n) {
    int i, j, x;
 
@@ -20,6 +22,7 @@ void ord_ins (int v[], int n) {
    }
 }
 
+// Algoritmo de ordenacion shell
 void ord_shell( int v[], int n ) {
    int incremento = n;
    int i, tmp, j;

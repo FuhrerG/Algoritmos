@@ -1,13 +1,13 @@
 #ifndef ALGORITMO
 #define ALGORITMO
 
-//Algoritmo de ordenacion por insercion
+// Algoritmo de ordenacion por insercion
 void ord_ins( int v[], int n );
 
-//Algoritmo de ordenacion shell
+// Algoritmo de ordenacion shell
 void ord_shell( int v[], int n );
 
-//Test
+// Test
 bool testear();
 
 #endif

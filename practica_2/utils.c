@@ -5,26 +5,28 @@
 
 #include "utils.h"
 
-//Inicializa la semilla para los numeros aleatorios
+/*****UTILIDADES PARA LA INICIALIZACION DE VECTORES*****/
+
+// Inicializa la semilla para los numeros aleatorios
 void inicializar_semilla(){
   srand(time(NULL));
 }
 
-//genera un vector de numeros aleatorios entre n y -n
+// Genera un vector de numeros aleatorios entre n y -n
 void aleatorio( int v[], int n ){
   int i, m = 2 * n + 1;
   for ( i = 0; i < n; i++ )
     v[i] = (rand() % m) - n;
 }
 
-//genera un vector de n numeros ordenados de forma ascendente
+// Genera un vector de n numeros ordenados de forma ascendente
 void ascendente( int v[], int n ){
   int i;
   for ( i = 0; i < n; i++ )
     v[i] = i;
 }
 
-//genera un vector de n numeros ordenados de forma descendente
+// Genera un vector de n numeros ordenados de forma descendente
 void descendente( int v[], int n ){
   int i;
   for ( i = 0 ; i < n ; i++ )
@@ -32,6 +34,7 @@ void descendente( int v[], int n ){
 }
 
 /******UTILIDADES DE TESTEO*******/
+
 // Función que muestra todo el contenido de un vector
 void listar_vector( int v[], int n ) {
    int i;
@@ -43,7 +46,7 @@ void listar_vector( int v[], int n ) {
    printf("]\n");
 }
 
-//Función que comprueba si un vector está ordenado
+// Función que comprueba si un vector está ordenado
 bool esta_ordenado(int v[],int n){
    int i;
 
