@@ -48,45 +48,48 @@ void division(int seleccion, float power) {
 void mostrar_tiempo(int n, double t, float subestimada,
   float ajustada, float sobreestimada) {
   printf("   %12d %15.7f %17.10f %17.10f %17.10f\n", n, t, t/subestimada,
-      t/ajustada, t/sobreestimada);
+    t/ajustada, t/sobreestimada);
 }
 
 // Función que mide los tiempos
-void medir_tiempos(double tiempos[12][3]) {
-    double t_inicio, t_fin, t1, t2;
-   int n, i, j, k;
-   int v[512000];
-   n = 500; j = 1; i = 1;
-   arbol a = creararbol();
-   while((i<8)&&(n<=512000)) {
-      // Inicializamos el vector
-      aleatorio(v, n);
-      // Obtenemos los tiempos de insercion
-      t_inicio = microsegundos();
-      for(k = 0; k<n; k++) a = insertar(v[k], a);
-      t_fin = microsegundos();
+void medir_tiempos(double tiempos[8][3]) {
+  double t_inicio, t_fin, t1, t2;
+  int n, i, j, k;
+  int v[512000];
+  n = 500; j = 1; i = 1;
+  arbol a = creararbol();
+  while((i<8)&&(n<=512000)) {
+    // Inicializamos el vector
+    aleatorio(v, n);
+    // Obtenemos los tiempos de insercion
+    t_inicio = microsegundos();
+    for(k = 0; k<n; k++)
+      a = insertar(v[k], a);
+    t_fin = microsegundos();
+    t1 = t_fin - t_inicio;
+    // Si el tiempo es pequeño se continua al siguiente ciclo
+    if (t1 < 500) {n*=2; a = eliminararbol(a); continue;}
 
-      t1 = t_fin - t_inicio;
-      // Si el tiempo es pequeño se continua al siguiente ciclo
-      if (t1 < 500) {n*=2; a = eliminararbol(a); continue;}
+    // Inicializamos el vector
+    aleatorio(v, n);
+    // Obtenemos los tiempos de busqueda
+    t_inicio = microsegundos();
+    for(k = 0; k<n; k++)
+      buscar(v[k], a);
+    t_fin = microsegundos();
 
-      // Obtenemos los tiempos de busqueda
-      t_inicio = microsegundos();
-      for(k = 0; k<n; k++) buscar(v[k], a);
-      t_fin = microsegundos();
+    t2 = t_fin - t_inicio;
+    // Si el tiempo es pequeño se continua al siguiente ciclo
+    if (t2 < 500)  {n*=2; a = eliminararbol(a); continue;}
 
-      t2 = t_fin - t_inicio;
-      // Si el tiempo es pequeño se continua al siguiente ciclo
-      if (t2 < 500)  {n*=2; a = eliminararbol(a); continue;}
-
-      // Se insertan los tiempos en la tabla
-      printf("%10i %10i %10i\n", n, (int) t1, (int) t2);
-      tiempos[j][0] = n; tiempos[j][1] = t1; tiempos[j][2] = t2;
-      // Se actualizan las variables
-      ++j; n*=2; a = eliminararbol(a); i++;
-   }
-   tiempos[0][0] = i;;
-   //printf("%d",i);
+    // Se insertan los tiempos en la tabla
+    printf("%10i %10i %10i\n", n, (int) t1, (int) t2);
+    tiempos[j][0] = n; tiempos[j][1] = t1; tiempos[j][2] = t2;
+    // Se actualizan las variables
+    ++j; n*=2; a = eliminararbol(a); i++;
+  }
+  tiempos[0][0] = i;;
+  //printf("%d",i);
 }
 
 // Muestra la cabecera de las tablas

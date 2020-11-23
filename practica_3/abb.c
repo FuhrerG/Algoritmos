@@ -101,34 +101,7 @@ int altura(arbol a) {
    return (1+MAX(altura(a->izq), altura(a->der)));
 }
 
-arbol vectortotree(arbol a, int v[], int n) {
-   int i;
-   for(i = 0; i<n; i++) a = insertar(v[i], a);
-   return a;
-}
-
 /*----------FUNCIONES DE TEST----------*/
-
-void testvectortotree() {
-   arbol a;
-   int v[100000];
-   int i;
-
-   printf("\nTest vectortotree\n");
-
-   printf("Vector: ");
-   for (i=0; i<5; i++) {
-      v[i] = (rand() % 10) - 5;
-      printf("%i ", v[i]);
-   }
-   printf("\n");
-
-   a = creararbol();
-   a = vectortotree(a, v, 5);
-   visualizar(a);
-
-   a = eliminararbol(a);
-}
 
 void testear(){
   arbol a;
@@ -176,9 +149,4 @@ void testear(){
   visualizar(a);
   printf("\n");
   printf("\nALTURA DE ARBOL: %i\n", altura(a));
-}
-
-void buscarvector(arbol a, int v[], int n) {
-   int i;
-   for(i = 0; i<n; i++) buscar(v[i], a);
 }

@@ -9,14 +9,14 @@
 /***FUNCIONES DE ENTRADA DE DATOS PARA LAS TABLAS DE TIEMPOS***/
 
 // Muestra las mediciones de tiempos de insercion en el arbol
-void medicion_insercion( double v[12][3] ) {
+void medicion_insercion( double v[8][3] ) {
    int selector[3];
    float power[3];
    int i;
 
    //Cota subestimada |   Cota ajustada     | Cota sobreestimada
-   selector[0]=LINEAL;    selector[1]=NEXP;    selector[2]=NEXP;
-   power[0]=0;            power[1]=1.25;        power[2]=1.5;
+   selector[0]=LINEAL;    selector[1]=NLOGN;    selector[2]=NEXP;
+   power[0]=0;            power[1]=0;        power[2]=1.5;
 
    printf("\n\n Tiempos en la inserción en el arbol\n\n");
    mostrar_cabecera(selector,power);
@@ -28,14 +28,14 @@ void medicion_insercion( double v[12][3] ) {
    }
 }
 
-void medicion_busqueda( double v[12][3] ) {
+void medicion_busqueda( double v[8][3] ) {
    int selector[3];
    float power[3];
    int i;
 
    //Cota subestimada |   Cota ajustada     | Cota sobreestimada
-   selector[0]=LINEAL;    selector[1]=NEXP;    selector[2]=NEXP;
-   power[0]=0;            power[1]=1.2;        power[2]=1.4;
+   selector[0]=LINEAL;    selector[1]=NLOGN;    selector[2]=NEXP;
+   power[0]=0;            power[1]=0;        power[2]=1.4;
 
    printf("\n\n Tiempos en la búsqueda en el arbol\n\n");
    mostrar_cabecera(selector,power);
@@ -48,7 +48,7 @@ void medicion_busqueda( double v[12][3] ) {
 }
 
 void tiempos(){
-   double v[12][3];
+   double v[8][3];
    printf("\n%10s %10s %10s\n", "n", "t_ins(n)", "t_bus(n)");
    medir_tiempos(v);
    medicion_insercion(v);
