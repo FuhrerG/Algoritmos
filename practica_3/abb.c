@@ -108,15 +108,10 @@ void testear(){
   printf("CREAR ARBOL: ");
 
   a = creararbol();
-  if (a == NULL) {
-    printf("Arbol creado correctamente \n");
-    printf("ARBOL VACIO: ");
-    visualizar(a);
-    printf("\n");
-  } else {
-    printf("\n******** TEST FALLADO ********\n");
-    printf("'No ha sido posible crear el arbol'\n");
-  }
+  printf("Arbol creado correctamente \n");
+  printf("ARBOL VACIO: ");
+  visualizar(a);
+  printf("\n");
 
   printf("\nTest insertar\n");
   printf("Inserto un 3\n");
@@ -135,13 +130,11 @@ void testear(){
   printf("ARBOL: \n");
   visualizar(a);
   printf("\nALTURA DE ARBOL: %i\n", altura(a));
-
   printf("busco 1 y encuentro 1 repetido: %i veces\n", numerorepeticiones(buscar(1,a)));
   printf("busco 2 y encuentro 2 repetido: %i veces\n", numerorepeticiones(buscar(2,a)));
   printf("busco 3 y encuentro 3 repetido: %i veces\n", numerorepeticiones(buscar(3,a)));
   printf("busco 4 y encuentro 4 repetido: %i veces\n", numerorepeticiones(buscar(4,a)));
   printf("busco 5 y encuentro 5 repetido: %i veces\n", numerorepeticiones(buscar(5,a)));
-  //printf("busco 6 y encuentro 6 repetido: %i veces\n", numerorepeticiones(buscar(6,a)));
 
   printf("borro todos los nodos liberando memoria\n");
   a = eliminararbol(a);

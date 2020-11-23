@@ -56,10 +56,11 @@ void medir_tiempos(double tiempos[8][3]) {
   double t_inicio, t_fin, t1, t2;
   int n, i, j, k;
   int v[512000];
+  arbol a;
   n = 500;
   j = 1;
   i = 1;
-  arbol a = creararbol();
+  a = creararbol();
   while((i<8)&&(n<=512000)) {
     aleatorio(v, n);
     t_inicio = microsegundos();
