@@ -14,9 +14,12 @@ void medicion_insercion( double v[8][3] ) {
    float power[3];
    int i;
 
-   //Cota subestimada |   Cota ajustada     | Cota sobreestimada
-   selector[0]=LINEAL;    selector[1]=NLOGN;    selector[2]=NEXP;
-   power[0]=0;            power[1]=0;        power[2]=1.5;
+   selector[0]=LINEAL;
+   selector[1]=NEXP;
+   selector[2]=NEXP;
+   power[0]=0;
+   power[1]=1.25;
+   power[2]=1.5;
 
    printf("\n\n Tiempos en la inserción en el arbol\n\n");
    mostrar_cabecera(selector,power);
@@ -24,7 +27,8 @@ void medicion_insercion( double v[8][3] ) {
       mostrar_tiempo((int) v[i][0], v[i][1],
          divisor(selector[0], (int) v[i][0], power[0]),
          divisor(selector[1], (int) v[i][0], power[1]),
-         divisor(selector[2], (int) v[i][0], power[2]));
+         divisor(selector[2], (int) v[i][0], power[2]),
+         divisor(NLOGN, (int) v[i][0], 0));
    }
 }
 
@@ -33,9 +37,12 @@ void medicion_busqueda( double v[8][3] ) {
    float power[3];
    int i;
 
-   //Cota subestimada |   Cota ajustada     | Cota sobreestimada
-   selector[0]=LINEAL;    selector[1]=NLOGN;    selector[2]=NEXP;
-   power[0]=0;            power[1]=0;        power[2]=1.4;
+   selector[0]=LINEAL;
+   selector[1]=NEXP;
+   selector[2]=NEXP;
+   power[0]=0;
+   power[1]=1.2;
+   power[2]=1.4;
 
    printf("\n\n Tiempos en la búsqueda en el arbol\n\n");
    mostrar_cabecera(selector,power);
@@ -43,7 +50,8 @@ void medicion_busqueda( double v[8][3] ) {
       mostrar_tiempo((int) v[i][0], v[i][2],
          divisor(selector[0], (int) v[i][0], power[0]),
          divisor(selector[1], (int) v[i][0], power[1]),
-         divisor(selector[2], (int) v[i][0], power[2]));
+         divisor(selector[2], (int) v[i][0], power[2]),
+         divisor(NLOGN, (int) v[i][0], 0));
    }
 }
 

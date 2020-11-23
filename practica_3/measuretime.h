@@ -12,10 +12,10 @@
 float divisor(int seleccion, int n, float power);
 
 void mostrar_tiempo(int n, double t, float subestimada,
-  float ajustada, float sobreestimada);
+  float ajustada, float sobreestimada, float teorica);
 
 // Función que mide los tiempos
-void medir_tiempos(double tiempos[12][3]);
+void medir_tiempos(double tiempos[8][3]);
 
 // Muestra la cabecera de las tablas
 void mostrar_cabecera(int selector[], float power[]);
