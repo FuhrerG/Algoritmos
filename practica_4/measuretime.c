@@ -88,7 +88,7 @@ void medir_tiempos(void (*ordenar)(int v[],int n), void (*inicializar)
   (int v[],int n), int selector[],float power[], int n1, int razon){
 
   double t_inicio, t_fin, t_total;
-  int i, v[32000], n = n1;
+  int i, v[1024000], n = n1;
   bool conProm;
 
   for (i = 0; i<7; i++) {
