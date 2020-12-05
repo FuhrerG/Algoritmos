@@ -110,10 +110,10 @@ void medir_tiempos(void (*ordenar)(int v[],int n), void (*inicializar)
 
     mostrar_tiempo(n, t_total, conProm, divisor(selector[0], n, power[0]),
       divisor(selector[1], n, power[1]), divisor(selector[2], n, power[2]));
+    // Obtenemos el termino de la progresion geometrica
+    n *= 2;
   }
   printf("\n*: Tiempo promedio de 1000 ejecuciones del algoritmo\n\n\n");
-  // Obtenemos el termino de la progresion geometrica
-  n *= 2;
 }
 
 // Muestra la cabecera de las tablas

@@ -18,8 +18,8 @@ void medicion_insercion( double v[8][3] ) {
    selector[1]=NEXP;
    selector[2]=NEXP;
    power[0]=0;
-   power[1]=1.25;
-   power[2]=1.5;
+   power[1]=1.2;
+   power[2]=1.4;
 
    printf("\n\n Tiempos en la inserción en el arbol\n\n");
    mostrar_cabecera(selector,power);
