@@ -91,7 +91,7 @@ void medir_tiempos(void (*ordenar)(int v[],int n), void (*inicializar)
   int i, v[1024000], n = n1;
   bool conProm;
 
-  for (i = 0; i<7; i++) {
+  for (i = 0; i<8; i++) {
 
     //inicializamos el vector
     inicializar(v, n);
