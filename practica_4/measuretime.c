@@ -85,13 +85,17 @@ double t_promedio(void (*ordenar)(int v[],int n),
 
 // Función que mide los tiempos
 void medir_tiempos(void (*ordenar)(int v[],int n), void (*inicializar)
-  (int v[],int n), int selector[],float power[], int n1, int razon){
+  (int v[],int n), int selector[],float power[], int n, int razon){
 
   double t_inicio, t_fin, t_total;
-  int i, v[1024000], n = n1;
+  int i, *v;
   bool conProm;
 
   for (i = 0; i<8; i++) {
+    if((v = calloc(n, sizeof(int)))==NULL){
+      perror("error al asignar la memoria");
+      exit(1);
+    }
 
     //inicializamos el vector
     inicializar(v, n);
@@ -112,6 +116,7 @@ void medir_tiempos(void (*ordenar)(int v[],int n), void (*inicializar)
       divisor(selector[1], n, power[1]), divisor(selector[2], n, power[2]));
       // Obtenemos el termino de la progresion geometrica
       n *= 2;
+      free(v);
   }
   printf("\n*: Tiempo promedio de 1000 ejecuciones del algoritmo\n\n\n");
 

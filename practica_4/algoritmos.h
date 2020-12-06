@@ -1,6 +1,6 @@
 #ifndef ALGORITMO
 #define ALGORITMO
-#define UMBRAL 100
+#define UMBRAL 10
 
 
 void ord_ins (int v[], int n);

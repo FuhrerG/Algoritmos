@@ -21,10 +21,10 @@ void tiempos_asc(){
   selector[2] = NEXP;
   power[0] = 0;
   power[1] = 0 ;
-  power[2] = 2;
+  power[2] = 1.2;
 
   mostrar_cabecera(selector, power);
-  medir_tiempos(&ord_rapida, &ascendente, selector, power, 8000, 2);
+  medir_tiempos(&ord_rapida, &ascendente, selector, power, 64000, 2);
 }
 
 // Pasa los datos y llama a las funciones para el calculo de los tiempos de
@@ -43,7 +43,7 @@ void tiempos_des(){
   power[2]=1.2;
 
   mostrar_cabecera(selector, power);
-  medir_tiempos(&ord_rapida, &descendente, selector, power, 8000, 2);
+  medir_tiempos(&ord_rapida, &descendente, selector, power, 64000, 2);
 }
 
 // Pasa los datos y llama a las funciones para el calculo de los tiempos de
@@ -62,15 +62,10 @@ void tiempos_ale(){
   power[2]=1.25;
 
   mostrar_cabecera(selector, power);
-  medir_tiempos(&ord_rapida, &aleatorio, selector, power, 8000, 2);
+  medir_tiempos(&ord_rapida, &aleatorio, selector, power, 64000, 2);
 }
 
 void tiempos(){
-
-  printf("--------------------------------------------------------------\n");
-  printf("\tUMBRAL %d\n", UMBRAL);
-  printf("--------------------------------------------------------------\n\n");
-
   tiempos_asc();
   tiempos_des();
   tiempos_ale();

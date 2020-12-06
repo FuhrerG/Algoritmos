@@ -4,7 +4,6 @@
 
 #include "algoritmos.h"
 #include "utils.h"
-#include "measuretime.h"
 
 /*****ALGORITMOS DE ORDENACION*****/
 
@@ -87,6 +86,10 @@ bool testear(){
   int n = 10;
   bool check = true;
 
+
+  printf("--------------------------------------------------------------\n");
+  printf("\tUMBRAL %d\n", UMBRAL);
+  printf("--------------------------------------------------------------\n\n");
   printf("Ejecutando test\n\n");
 
   printf("\n+++Test de Ordenación por insercion con vector "

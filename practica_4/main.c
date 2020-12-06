@@ -10,7 +10,6 @@
 */
 #include <stdbool.h>
 #include <stdio.h>
-#include <unistd.h>
 
 #include "utils.h"
 #include "algoritmos.h"
