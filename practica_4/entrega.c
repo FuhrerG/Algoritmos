@@ -6,6 +6,7 @@
 #include <time.h>
 
 #define UMBRAL 10
+#define REPETIR 15
 
 // SELECTOR DE DIVISORES PARA LAS COTAS:
 #define LOGN 1
@@ -267,7 +268,7 @@ void medir_tiempos(void (*ordenar)(int v[],int n), void (*inicializar)
   int i, *v;
   bool conProm;
 
-  for (i = 0; i<8; i++) {
+  for (i = 0; i < REPETIR; i++) {
     if((v = calloc(n, sizeof(int)))==NULL){
       perror("error al asignar la memoria");
       exit(1);
