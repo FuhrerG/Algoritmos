@@ -11,9 +11,6 @@
 //calcula el tiempo desde ... hasta ahora
 double microsegundos();
 
-//testea que todos los algoritmos arrojen los mismos resultados
-bool test();
-
 // Funcion para gestionar mediciones de tiempo y creacion de tablas
 void tiempos();
 
