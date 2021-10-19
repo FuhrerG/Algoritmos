@@ -15,6 +15,7 @@
 #include "utils.h"
 #include "abb.h"
 #include "datain.h"
+#include "test.h"
 
 int main() {
   int repeticiones;

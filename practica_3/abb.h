@@ -20,6 +20,5 @@ int elemento(posicion p);
 int numerorepeticiones(posicion p);
 int altura(arbol a);
 void visualizar(arbol a);
-void testear();
 
 #endif
