@@ -22,15 +22,15 @@ _En este repositorio están las implementaciones de las 4 practicas de la asigna
 ### Ejecutando las practicas:
 _Todas las practicas cuentan con un archivo makefile y por tanto se compilan con:_
 ```
-make
+$ make
 ```
 _Todos los makefile generan un ejecutable **main.out** que ejecutaremos:_
 ```
-./main.out
+$ ./main.out
 ```
 ó
 ```
-./Practica_n/main.out
+$ ./Practica_n/main.out
 ```
 ### Programado en:
 * **C**
