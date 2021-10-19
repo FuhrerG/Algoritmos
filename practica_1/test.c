@@ -1,3 +1,6 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include "test.h"
 #include "algoritmos.h"
 
 //testea que todos los algoritmos arrojen los mismos resultados
