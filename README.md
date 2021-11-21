@@ -9,7 +9,7 @@ DESARROLLO DE LAS PRACTICAS DE LA ASIGNATURA DE ALGORITMOS DEL CURSO 2020-2021
 ## Descripción
 _En este repositorio están las implementaciones de las 4 practicas de la asignatura de algoritmos del curso 2020-2021_
 
-* **Práctica 1:** Implementación y análisis de la complejidad computacional de 3 algoritmos de fibonacci.
+* **Práctica 1:** Implementación y análisis de la complejidad computacional de 3 algoritmos para obtener n elementos de la sucesión de fibonacci.
 * **Práctica 2:** Implementación y análisis de la complejidad computacional de 2 algoritmos de ordenación.
 	* _Ordenación Shell_
 	* _Ordenación por inserción_
